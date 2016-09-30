@@ -1,5 +1,6 @@
 var info=getInfo();
 var flag=1;
+alert(info);
 $(function(){
   var p=0;
   $('.position').html('第'+flag+'页/共'+Math.ceil(info.length/5)+'页');
@@ -48,10 +49,13 @@ $(function(){
         return ;
     }
   }
+$(function(){
+  alert(getInfo());
+});
 function getInfo(){
   var info;
   $.ajax({
-    url:'https://github.com/1415003719/zhx.github.com/tree/gh-pages/info/info.json',
+    url:'../info/info.json',
     type:'get',
     jsonp:'callback',
     dataType:'json',
