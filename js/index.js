@@ -48,13 +48,10 @@ $(function(){
         return ;
     }
   }
-$(function(){
-  alert(getInfo());
-});
 function getInfo(){
   var info;
   $.ajax({
-    url:'../info/info.json',
+    url:'https://1415003719.github.io/zhx.github.com/info/info.json',
     type:'get',
     jsonp:'callback',
     dataType:'json',
