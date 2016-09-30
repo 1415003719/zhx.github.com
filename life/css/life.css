@@ -1,0 +1,25 @@
+.lifeList{
+  display: block;
+  height: auto;
+  width: 100%;
+  padding: 150px 100px;
+  background: green;
+  margin-bottom: 50px;
+  font-size: 50px;
+  box-shadow: 10px 10px 15px 5px #ccc;
+}
+.list1{
+    background: url('../image/57290-106.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.list2{
+  background: url('../image/59269-106.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.list3{
+  background: url('../image/124402-106.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
