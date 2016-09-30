@@ -1,4 +1,4 @@
-var flag=1;
+﻿var flag=1;
 var info=getInfo();
 $(function(){
   var p=0;
@@ -51,7 +51,7 @@ $(function(){
 function getInfo(){
   var info;
   $.ajax({
-    url:'../info/info.json',
+    url:'https:'//github.com/1415003719/zhx.github.com/tree/gh-pages/info/info.json',
     type:'get',
     jsonp:'callback',
     dataType:'json',
