@@ -1,6 +1,5 @@
-var info=getInfo();
+﻿var info=getInfo();
 var flag=1;
-alert(info);
 $(function(){
   var p=0;
   $('.position').html('第'+flag+'页/共'+Math.ceil(info.length/5)+'页');
