@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3相册</title>
+	<style type="text/css">
+		body{
+			background:#222;
+			margin: 0px;
+			padding: 0px;
+		}
+		.cardFan{
+			width: 300px;
+			height: 200px;
+			margin: 20px auto;
+		}
+		.cardFan>img{
+			position: absolute;
+			border:10px solid #fff;
+			box-sizing: border-box;
+			box-shadow: 4px 4px 3px rgba(0,0,0,0.2);
+			transform-origin: center 400px;
+			transition: transform .7s ease;
+		}
+		.cardFan img:first-child{
+			transform: rotate(5deg); 
+		}
+		.cardFan img:last-child{
+			transform: rotate(-5deg);
+		}
+		.cardFan:hover img:first-child{
+			transform: rotate(25deg);
+		}
+		.cardFan:hover img:last-child{
+			transform: rotate(-25deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="cardFan">
+		<img src="1.jpg" alt="" width="300" height="200"/>
+		<img src="2.jpg" alt="" width="300" height="200"/>
+		<img src="3.jpg" alt="" width="300" height="200"/>
+	</div>
+</body>
+</html>

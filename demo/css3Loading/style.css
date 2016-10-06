@@ -1,0 +1,176 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: black;
+}
+.container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 300px;
+	height: 300px;
+
+}
+
+.comman{
+	width: 120px;
+	height: 40px;
+	margin: auto;
+	position: absolute;
+	border-radius: 50px 0px;
+	box-shadow: inset 0 0 0 1px red, 0 0 30px 0 #E645D0;
+}
+.class1{
+	top: 45px;
+	left: 105px;
+	transform: rotate(-45deg);
+	animation: class1 1s ease infinite;
+	-moz-animation: class1 1s ease infinite;
+	-webkit-animation: class1 1s ease infinite;
+	-o-animation: class1 1s ease infinite;
+}
+.class2{
+	right: 20px;
+	top: 80px;
+    animation: class1 1s 0.125s ease infinite;
+    -moz-animation: class1 1s 0.125s ease infinite;
+    -webkit-animation: class1 1s 0.125s ease infinite;
+    -o-animation: class1 1s 0.125s ease infinite;
+}
+.class3{
+	left: 175px;
+	top: 145px;
+	transform: rotate(45deg);
+	animation: class1 1s 0.25s ease infinite;
+    -moz-animation: class1 1s 0.25s ease infinite;
+    -webkit-animation: class1 1s 0.25s ease infinite;
+    -o-animation: class1 1s 0.25s ease infinite;
+}
+.class4{
+	right: 40px;
+	bottom: 60px;
+	transform: rotate(90deg);
+	animation: class1 1s 0.325s ease infinite;
+    -moz-animation: class1 1s 0.325s ease infinite;
+    -webkit-animation: class1 1s 0.325s ease infinite;
+    -o-animation: class1 1s 0.325s ease infinite;
+}
+.class5{
+	left: 75px;
+	top: 215px;
+	transform: rotate(135deg);
+	animation: class1 1s 0.45s ease infinite;
+    -moz-animation: class1 1s 0.45s ease infinite;
+    -webkit-animation: class1 1s 0.45s ease infinite;
+    -o-animation: class1 1s 0.45s ease infinite;
+}
+.class6{
+	left: 20px;
+	bottom: 80px;
+	transform: rotate(180deg);
+	animation: class1 1s 0.525s ease infinite;
+    -moz-animation: class1 1s 0.525s ease infinite;
+    -webkit-animation: class1 1s 0.525s ease infinite;
+    -o-animation: class1 1s 0.525s ease infinite;
+}
+.class7{
+	left: 5px;
+	top: 115px;
+	transform: rotate(225deg);
+	animation: class1 1s 0.65s ease infinite;
+    -moz-animation: class1 1s 0.65s ease infinite;
+    -webkit-animation: class1 1s 0.65s ease infinite;
+    -o-animation: class1 1s 0.65s ease infinite; 
+}
+.class8{
+	left: 40px;
+	top: 60px;
+	transform: rotate(270deg); 
+	animation: class1 1s 0.725s ease infinite;
+    -moz-animation: class1 1s 0.725s ease infinite;
+    -webkit-animation: class1 1s 0.725s ease infinite;
+    -o-animation: class1 1s 0.725s ease infinite;
+}
+.container{
+	animation: rotate 5s linear infinite; 
+}
+@keyframes rotate{
+	from {
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@keyframes class1{
+	0%,100%{
+	}
+	50%{
+		box-shadow: inset 0 0 0 1px #17E1E6, 0 0 30px 0 #17E1E6;
+	}
+}
+.processBar{
+	position: absolute;
+	width: 260px;
+	height: 10px;
+	border: 1px solid red;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 350px;
+	margin: auto;
+	overflow: hidden;
+
+}
+.bar{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #17E1E6;
+	left: -260px;
+	animation: bar 6s ease;
+    -moz-animation: bar 6s ease;
+    -webkit-animation: bar 6s ease;
+    -o-animation: bar 6s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes bar{
+	0{
+		left: -230px;
+	}
+	10%{
+		left: -200px;
+	}
+	20%{
+		left: -170px;
+	}
+	30%{
+		left: -150px;
+	}
+	40%{
+		left: -100px;
+	}
+	50%{
+		left: -90px;
+	}
+	60%{
+		left: -90px;
+	}
+	70%{
+		left: -60px;
+	}
+	80%{
+		left: -40px;
+	}
+	90%{
+		left: -10px;
+	}
+	100%{
+		left: 0;
+	}
+}

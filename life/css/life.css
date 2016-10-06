@@ -3,10 +3,10 @@
   height: auto;
   width: 100%;
   padding: 150px 100px;
-  background: green;
   margin-bottom: 50px;
   font-size: 50px;
   box-shadow: 10px 10px 15px 5px #ccc;
+  color: #F98459 !important;
 }
 .list1{
     background: url('../image/57290-106.jpg') no-repeat;

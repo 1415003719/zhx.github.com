@@ -73,23 +73,34 @@ li{
   background-size: cover;
   padding: 10px 50px 30px 50px;
   margin-bottom: 30px;
-  border-radius: 15px;
   color: black;
+}
+.art:hover{
+  cursor: pointer;
+  box-shadow: 0 0 5px 5px #F98459;
 }
 .art span{
   float: right;
+}
+.art h3 a{
+  color:#F98459;
 }
 .time{
   margin-left: 5px;
 }
 .aside{
-  padding: 20px;
-  border-radius: 20px;
+  padding: 10px 20px;
   width: 100%;
   background: url('../images/section.jpg');
 }
 .aside span{
   margin-bottom: 10px;
+}
+.demo li{
+  padding:8px 5px;
+}
+.demo a:hover{
+  color:#F98459;
 }
 .navgation{
   width: 100%;

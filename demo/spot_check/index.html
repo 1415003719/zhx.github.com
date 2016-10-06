@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>摇一摇</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			margin: 0;
+		}
+
+		#mesg {
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			font-family: "微软雅黑";
+		}
+
+		#contr {
+			width: 200px;
+			height: 30px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		span {
+			margin-top: 20px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 20px;
+			float: left;
+			width: 80px;
+			display: block;
+			font-size: 20px;
+			border-radius: 7px;
+			background-color: blue;
+		}
+
+		#begin,
+		#end:hover {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mesg">吃什么？</div>
+	<div id="contr">
+		<span id="begin">开始</span>
+		<span id="end">结束</span>
+	</div>
+	<script type="text/javascript">
+		var data = ["招牌牛肉饭", "照烧鸡腿饭", "沙拉炸鸡饭", "润烧东坡饭", "麻婆豆腐饭", "蛋仔山珍菌菇饭", "秘制排骨饭", "照烧鸡肥牛双拼饭", "筋头巴脑饭", "肥牛豆腐双拼饭", "照烧鸡茄子双拼饭", "茄子排骨双拼", "日式炸鸡饭", "红烧茄子饭", "黑椒牛腩饭", "叉烧肉炒饭", "日式蛋包饭", "鱿鱼炒饭"];
+		var goods = document.getElementById('mesg');
+		var begin = document.getElementById('begin');
+		var end = document.getElementById('end');
+		var i;
+		window.onload = function() {
+			begin.onclick = beginFun;
+			end.onclick = endFun;
+			begin.onkeyup = keyFun;
+		}
+
+		function beginFun() {
+			clearInterval(i);
+			i = setInterval(function() {
+				var randoms = Math.floor(Math.random() * data.length);
+				goods.innerHTML = data[randoms];
+				begin.style.backgroundColor = "#ccc";
+
+			}, 50);
+		}
+
+		function endFun() {
+			clearInterval(i);
+			begin.style.backgroundColor = "blue";
+
+		}
+
+		function keyFun(event) {
+			event = event || window.event;
+			console(event.keyCode);
+		}
+	</script>
+</body>
+
+</html>

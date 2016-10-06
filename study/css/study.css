@@ -18,3 +18,6 @@
   background-position: center;
   background-size: cover;
 }
+.studyContainer a:hover,.studyContainer a:active{
+  box-shadow: 0 0 5px 5px #F98459;
+}
