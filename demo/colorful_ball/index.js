@@ -27,7 +27,6 @@ canvas.onmousemove=function(event){
 		var aball=new ball(x,y,r,vx,vy,col);
 		balls.push(aball);
 }
-
 function ball(x,y,r,vx,vy,col){
 	this.x=x;
 	this.y=y;
@@ -58,3 +57,33 @@ function ball(x,y,r,vx,vy,col){
 		}
 	}; 
 }
+function load (){  
+   
+    document.addEventListener('touchstart',touch, false);  
+    document.addEventListener('touchmove',touch, false);  
+    document.addEventListener('touchend',touch, false);  
+       
+    function touch (event){  
+        var event = event || window.event;   
+   
+        switch(event.type){  
+            case "touchstart":   
+                break;  
+            case "touchend":  
+                break;  
+            case "touchmove":  
+                event.preventDefault();  
+                 var x=event.changedTouches[0].clientX;
+				var y=event.changedTouches[0].clientY;
+				var r=Math.random()*50+10;
+				var vx=Math.random()*10-5;
+				var vy=0;
+				var col='rgb('+Math.floor(Math.random()*225)+','+Math.floor(Math.random()*225)+','+Math.floor(Math.random()*225)+')';
+				var aball=new ball(x,y,r,vx,vy,col);
+				balls.push(aball);
+                break;  
+        }  
+           
+    }  
+}  
+window.addEventListener('load',load, false);
