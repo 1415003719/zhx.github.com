@@ -92,15 +92,23 @@ li{
   padding: 10px 20px;
   width: 100%;
   background: url('../images/section.jpg');
+  overflow: auto;
 }
 .aside span{
   margin-bottom: 10px;
 }
 .demo li{
   padding:8px 5px;
+  font-size: 20px;
 }
 .demo a:hover{
   color:#F98459;
+}
+.demoMore{
+  float: right;
+  color: red !important;
+  padding: 10px 30px 20px 0;
+  font-size: 20px;
 }
 .navgation{
   width: 100%;
