@@ -1,7 +1,7 @@
 {
   "data":[
     {"article":"1","title":"Canvas基础知识","image":"images/java.jpg","details":"开始Canvas之旅","time":"2016-9-26","src":"https://1415003719.github.io/zhx.github.com/article_html/canvas_1.html"},
-    {"article":"2","title":"CSS3D基础知识学习","image":"images/java.jpg","details":"3D动画正确打开方式","time":"2016-9-26","https://1415003719.github.io/zhx.github.com/article_html/perspective_3d.html"},
+    {"article":"2","title":"CSS3D基础知识学习","image":"images/java.jpg","details":"3D动画正确打开方式","time":"2016-9-26","src":"https://1415003719.github.io/zhx.github.com/article_html/perspective_3d.html"},
     {"article":"3","title":"CSS3D旋转木马","image":"images/java.jpg","details":"学习java的方法如下","time":"2016-9-26","src":"https://1415003719.github.io/zhx.github.com/article_html/3dphotos.html"},
     {"article":"4","title":"javascript的学习方法","image":"images/java.jpg","details":"学习java的方法如下","time":"2016-9-26"},
     {"article":"5","title":"CSS的学习方法","image":"images/java.jpg","details":"学习java的方法如下","time":"2016-9-26"},
