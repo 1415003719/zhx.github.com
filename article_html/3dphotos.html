@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <style type="text/css">
+			#container{
+				-webkit-perspective:800;
+				-moz-perspective:800;
+				-ms-perspective:800;
+				-o-perspective:800;
+				perspective:800;
+				-webkit-perspective-origin:50% 50%;
+				-moz-perspective-origin:50% 50%;
+				-ms-perspective-origin:50% 50%;
+				-o-perspective-origin:50% 50%;
+				perspective-origin:50% 50%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+			#imgGroup{
+				-webkit-transform-style:-webkit-preserve-3d;
+				-moz-transform-style:-moz-preserve-3d;
+				-ms-transform-style:-ms-preserve-3d;
+				-o-transform-style:-o-preserve-3d;
+				transform-style:preserve-3d;
+				width: 160px;
+				height: 160px;
+				margin: 100px auto;
+				position: relative;
+				transition: transform  1s;
+			}
+			.perspective{
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				padding:5px;
+				box-shadow: 0 0 10px rgba(0,0,0,.35);
+
+			}
+			#perspective1{
+				transform: rotateY(0deg) translateZ(300px);
+				background-color:red;
+			}
+			#perspective2{
+				transform: rotateY(40deg) translateZ(300px);
+				background-color:green;
+			}
+			#perspective3{
+				transform: rotateY(80deg) translateZ(300px);
+				background-color:blue;
+			}
+			#perspective4{
+				transform: rotateY(120deg) translateZ(300px);
+				background-color:gray;
+			}
+			#perspective5{
+				transform: rotateY(160deg) translateZ(300px);
+				background-color:black;
+			}
+			#perspective6{
+				transform: rotateY(200deg) translateZ(300px);
+				background-color:pink;
+			}
+			#perspective7{
+				transform: rotateY(240deg) translateZ(300px);
+				background-color:orange;
+			}
+			#perspective8{
+				transform: rotateY(280deg) translateZ(300px);
+				background-color:pink;
+			}
+			#perspective9{
+				transform: rotateY(320deg) translateZ(300px);
+				background-color:#565656;
+			}
+
+    </style>
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+    	<h2>3D旋转木马相册</h2>
+		<div id="container">
+			<div id="imgGroup">
+				<div class="perspective" id="perspective1"></div>
+				<div class="perspective" id="perspective2"></div>
+				<div class="perspective" id="perspective3"></div>
+				<div class="perspective" id="perspective4"></div>
+				<div class="perspective" id="perspective5"></div>
+				<div class="perspective" id="perspective6"></div>
+				<div class="perspective" id="perspective7"></div>
+				<div class="perspective" id="perspective8"></div>
+				<div class="perspective" id="perspective9"></div>
+			</div>
+		</div>
+		<p>这里就不加上图片了<a href="#">源码在github上</a></p>
+	</div>
+    <!--footer start  -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>最新文章</h3>
+                    <li>
+                        <a href="#">PHP</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">C#</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">CSS3</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                </div>
+                <div class="col-md-4">
+                    <h3>标签云</h3>
+                    <a href="#" class="tag">java</a>
+                    <a href="#" class="tag">c#</a>
+                    <a href="#" class="tag">javascript</a>
+                    <a href="#" class="tag">php</a>
+                    <a href="#" class="tag">c++</a>
+                    <a href="#" class="tag">css3</a>
+                    <a href="#" class="tag">angular</a>
+                    <a href="#" class="tag">bootstrap</a>
+                    <a href="#" class="tag">jquery</a>
+                    <a href="#" class="tag">html5</a>
+                    <a href="#" class="tag">SQL</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>友情链接</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>Copyright&nbsp;&copy; <a href="#">小左博客网</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer end  -->
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/canvas_1.js"></script>
+	<script type="text/javascript">
+		var imgGroup=document.getElementById('imgGroup');
+		var num=1;
+		imgGroup.onclick=function(){
+			imgGroup.style.transform="rotateY("+num*40+"deg)"
+			num++;
+		}
+	</script>
+</body>
+
+</html>

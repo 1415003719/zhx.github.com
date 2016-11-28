@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <style type="text/css">
+    	#container{
+			-webkit-perspective:800;
+			-moz-perspective:800;
+			-ms-perspective:800;
+			-o-perspective:800;
+			perspective:800;
+			-webkit-perspective-origin:50% 50%;
+			-moz-perspective-origin:50% 50%;
+			-ms-perspective-origin:50% 50%;
+			-o-perspective-origin:50% 50%;
+			perspective-origin:50% 50%;
+			-webkit-transform-style:-webkit-preserve-3d;
+			-moz-transform-style:-moz-preserve-3d;
+			-ms-transform-style:-ms-preserve-3d;
+			-o-transform-style:-o-preserve-3d;
+			transform-style:preserve-3d;
+			border: 1px solid black;
+		}
+		#perspective{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color:red;
+			-webkit-transform:rotateX(0deg);
+			-webkit-transform:rotateY(0deg);
+			-webkit-transform:rotateZ(0deg);
+		}
+		#rotateBox{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.rotate{
+			display: inline-block;
+			width: 500px;
+			height: 50px;
+		}
+    </style>
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+	 	<h2>CSS3 3D基础</h2>
+	 	<div>
+	 		<h3>第一步，定义一个3D视窗，即你要通过这个视窗去观看3D世界</h3>
+	 		<pre>
+	 	&lt;div id="3DWindow"&gt;
+			&lt;div id="3DBox"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;--定义样式--&gt;
+		#3DWindow{
+			-webkit-perspective:800;/*定义3D画面距离3D窗口的距离，值越大，看到的画面越小，即越远的感觉*/
+			-moz-perspective:800;
+			-ms-perspective:800;
+			-o-perspective:800;
+			perspective:800;
+			-webkit-perspective-origin:50% 50%;/*定义观看角度，这里是窗口的正中心为观察点*/
+			-moz-perspective-origin:50% 50%;
+			-ms-perspective-origin:50% 50%;
+			-o-perspective-origin:50% 50%;
+			perspective-origin:50% 50%;
+			-webkit-transform-style:-webkit-preserve-3d;/*定义子视图图形变换为3D图形变换*/
+			-moz-transform-style:-moz-preserve-3d;
+			-ms-transform-style:-ms-preserve-3d;
+			-o-transform-style:-o-preserve-3d;
+			transform-style:preserve-3d;
+		}
+		#3DBox{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color:red;
+		}
+	 		</pre>
+	 		<strong><span class="glyphicon glyphicon-hand-right"></span>CSS3 3D为CSS3属性，在各浏览器端支持都不同，所以要根据不同浏览器添加不同前缀！！</strong>
+	 	</div>
+	 	<div>
+	 		<h3>第二步，进行3D变换</h3>
+	 		<p>3d变换主要有translate,rotate,scale,skew，这里我以rotate为例写个小demo</p>
+	 		<div id="container">
+				<div id="perspective"></div>
+			</div>
+			<div id="rotateBox">
+				<label>rotateX(<span id="xvalue">0</span>deg):</label><span>-360</span><input type="range" name="range" value="0" min="-360" max="360" class="rotate" id="rotateX" onchange="rotateChange()" /><span>360</span>
+			</div>
+			<div id="rotateBox">
+				<label>rotateY(<span id="yvalue">0</span>deg):</label><span>-360</span><input type="range" name="range" value="0" min="-360" max="360" class="rotate" id="rotateY" onchange="rotateChange()" /><span>360</span>
+			</div>
+			<div id="rotateBox">
+				<label>rotateZ(<span id="zvalue">0</span>deg):</label><span>-360</span><input type="range" name="range" value="0" min="-360" max="360" class="rotate" id="rotateZ" onchange="rotateChange()" /><span>360</span>
+			</div>
+		</div>
+		<div>
+			<strong><span class="glyphicon glyphicon-hand-right"></span><a href="">源码贴在github上</a></strong>
+		</div>
+    </div>
+    <!--footer start  -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>最新文章</h3>
+                    <li>
+                        <a href="#">PHP</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">C#</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">CSS3</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                </div>
+                <div class="col-md-4">
+                    <h3>标签云</h3>
+                    <a href="#" class="tag">java</a>
+                    <a href="#" class="tag">c#</a>
+                    <a href="#" class="tag">javascript</a>
+                    <a href="#" class="tag">php</a>
+                    <a href="#" class="tag">c++</a>
+                    <a href="#" class="tag">css3</a>
+                    <a href="#" class="tag">angular</a>
+                    <a href="#" class="tag">bootstrap</a>
+                    <a href="#" class="tag">jquery</a>
+                    <a href="#" class="tag">html5</a>
+                    <a href="#" class="tag">SQL</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>友情链接</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>Copyright&nbsp;&copy; <a href="#">小左博客网</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer end  -->
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/canvas_1.js"></script>
+    <script type="text/javascript">
+    	function rotateChange() {
+			var Xdeg=document.getElementById('rotateX').value,
+				Ydeg=document.getElementById('rotateY').value,
+				Zdeg=document.getElementById('rotateZ').value;
+			var xvalue=document.getElementById('xvalue'),
+				yvalue=document.getElementById('yvalue'),
+				zvalue=document.getElementById('zvalue');
+
+			document.getElementById('perspective').style.webkitTransform="rotateX("+Xdeg+"deg) rotateY("+Ydeg+"deg) rotateZ("+Zdeg+"deg)";
+			xvalue.innerText=Xdeg;
+			yvalue.innerText=Ydeg;
+			zvalue.innerText=Zdeg;
+		}
+    </script>
+</body>
+
+</html>

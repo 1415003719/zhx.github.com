@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Canvas基础</h2>
+        <div>
+            <h4>一.开始Canvas之旅</h4>
+            <div>
+                <h5>1.首先在html的body标签中加入canvas标签，定义一块画布</h5>
+                <pre>&lt;canvas id="canvas"&gt;如果你看到这句话,说明你的浏览器版本不支持canvas,请更换浏览器体验！！！ &lt;/canvas&gt;
+                </pre>
+                <strong><span class="glyphicon glyphicon-hand-right"></span>提示：canvas标签中的文字只有在你的浏览器不支持canvas的情况下才会显示</strong>
+            </div>
+            <div>
+                <h5>2.在js文件中获取到canvas</h5>
+                <pre>
+                var canvas=document.getElementById('canvas');
+                canvas.width=600;
+                canvas.height=600;
+                var context=canvas.getContext('2d'); 
+                </pre>
+                <p>这里我设置了这块画布的宽和高都为600px,<code>var context=canvas.getContext('2d');</code>这句的意思是获取当前画布的上下文环境</p>
+            </div>
+            <div>
+                <h5>3.开始画一条直线</h5>
+                <pre>
+                context.moveTo(100,100);  //把画笔移动到画布坐标的(100,100)处
+                context.lineTo(500,500); //从(100,100)处画一条直线到(500,500)处
+                context.stroke();
+                </pre>
+                <strong><span class="glyphicon glyphicon-hand-right"></span>特别注意的一点是,canvas是基于状态画图的,context.stroke()之前的语句是告诉编译器你想要画一个什么图形,context.stroke()相当于一条命定,告诉编译器去画上面的图形,要是不加上context.stroke(),就画不出来图形</strong>
+            </div>
+            <div>
+                <h5>4.给线条加样式(color,width)</h5>
+                <pre>
+                context.moveTo(100,100);  //把画笔移动到画布坐标的(100,100)处
+                context.lineTo(500,500); //从(100,100)处画一条直线到(500,500)处
+                //设置样式
+                context.lineWidth=5;//设置线条宽度为5px
+                context.strokeStyle="green";//设置线条颜色
+                context.stroke();
+                </pre>
+            </div>
+            <div>
+                <h5>5.最终效果如下</h5>
+                <canvas id="lineCanvas" width="300" height="300">如果你看到这句话,说明你的浏览器版本不支持canvas,请更换浏览器体验！！！
+                </canvas>
+            </div>
+            <div>
+                <h5>6.画基本的多边形</h5>
+                <p>原理很简单，只要在上面画直线的基础上多加几句lineTo(x,y)就能绘制出多边形</p>
+                <pre>
+                context.moveTo(100,100);  //把画笔移动到画布坐标的(100,100)处
+                context.lineTo(500,500); //从(100,100)处画一条直线到(500,500)处
+                context.lineTo(100,500);
+                context.lineTo(0,400);
+                context.lineTo(100,100);//最后回到起始位置，就能构成一个多边形
+                //设置样式
+                context.lineWidth=5;//设置线条宽度为5px
+                context.strokeStyle="green";//设置线条颜色
+                context.stroke();
+                </pre>
+                <p>上面的画法存在一点问题,当你的线条宽度很大时，就会很明显，你会发现在线条最后交尾的地方并没有很好的闭合，解决该问题的
+                方法是使用context.beginPath()和context.closePath()方法包裹上面的画图语句</p>
+                <pre>
+                context.beginPath();//开始一个新的路径
+                context.moveTo(100,100);  //把画笔移动到画布坐标的(100,100)处
+                context.lineTo(500,500); //从(100,100)处画一条直线到(500,500)处
+                context.lineTo(100,500);
+                context.lineTo(0,400);
+                //context.lineTo(100,100);//该行可省略,使用context.closePaht()方法会为你自动封闭你的路径
+                context.closePaht();//关闭当前路径
+                //设置样式
+                context.lineWidth=5;//设置线条宽度为5px
+                context.strokeStyle="green";//设置线条颜色
+                context.stroke();
+                </pre>
+                <strong><span class="glyphicon glyphicon-hand-right"></span>建议每画一个图形都用beginPath开头来定义一个新的路径，否则你在一个画布中绘制多个图形时，可能后面的样式语句会覆盖前面的样式语句!</strong>
+            </div>
+            <div>
+                <h5>6.Canvas API中简单的画图函数</h5>
+                <p>在Canvas API中定义了一些简单图形的绘制函数</p>
+                <ul>
+                    <li>rect(x,y,width,height)  画一个矩形</li>
+                    <li>fillRect(x,y,width,height)  填充一个矩形，填充颜色</li>
+                    <li>strokeRect(x,y,width,height)  勾勒一个矩形，只有边框</li>
+                    <li>arc(x, y, radius, startAngle, endAngle, anticlockwise)  画一个圆</li>
+                    <li>arcTo(x1, y1, x2,y2,radius)  画两个点之间的圆弧</li>
+                </ul>
+                <canvas id="moreCanvas" width="1200" height="500"></canvas>
+            </div>
+        </div>
+    </div>
+    <!--footer start  -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>最新文章</h3>
+                    <li>
+                        <a href="#">PHP</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">C#</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                    <li>
+                        <a href="#">CSS3</a>
+                        <div class="date">2016年4月3日</div>
+                    </li>
+                </div>
+                <div class="col-md-4">
+                    <h3>标签云</h3>
+                    <a href="#" class="tag">java</a>
+                    <a href="#" class="tag">c#</a>
+                    <a href="#" class="tag">javascript</a>
+                    <a href="#" class="tag">php</a>
+                    <a href="#" class="tag">c++</a>
+                    <a href="#" class="tag">css3</a>
+                    <a href="#" class="tag">angular</a>
+                    <a href="#" class="tag">bootstrap</a>
+                    <a href="#" class="tag">jquery</a>
+                    <a href="#" class="tag">html5</a>
+                    <a href="#" class="tag">SQL</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>友情链接</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>Copyright&nbsp;&copy; <a href="#">小左博客网</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer end  -->
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/canvas_1.js"></script>
+</body>
+
+</html>
